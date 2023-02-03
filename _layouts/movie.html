@@ -109,17 +109,43 @@
                     {% assign myDataReversed = (mydata | reverse) %}
                     {% for row in myDataReversed %}    
                         {% if row.Rating == " 1" %}
-                            {% assign ratingValue = "Bad 👎" %}
-                        {% elsif row.Rating == " 2" %}
-                            {% assign ratingValue = "Alright 👋" %}
-                        {% elsif row.Rating == " 3" %}
-                            {% assign ratingValue = "Good 👍" %}
-                        {% elsif row.Rating == " 4" %}
-                            {% assign ratingValue = "Great 🙌" %}
-                        {% elsif row.Rating == " 5" %}
-                            {% assign ratingValue = "Love ❤️" %}
+                            {% assign ratingValue = "1/10 👎" %}
+                        {% if row.Rating == " 1.5" %}
+                            {% assign ratingValue = "1.5/10 👎" %}
+                        {% if row.Rating == " 2" %}
+                            {% assign ratingValue = "2/10 👎" %}
+                        {% if row.Rating == " 2.5" %}
+                            {% assign ratingValue = "2.5/10 👎" %}
+                        {% if row.Rating == " 3" %}
+                            {% assign ratingValue = "3/10 👎" %}
+                        {% if row.Rating == " 3.5" %}
+                            {% assign ratingValue = "3.5/10 👎" %}
+                        {% if row.Rating == " 4" %}
+                            {% assign ratingValue = "4/10 👎" %}
+                        {% if row.Rating == " 4.5" %}
+                            {% assign ratingValue = "4.5/10 👎" %}
+                        {% if row.Rating == " 5" %}
+                            {% assign ratingValue = "5/10 👋" %}
+                        {% if row.Rating == " 5.5" %}
+                            {% assign ratingValue = "5.5/10 👋" %}
                         {% elsif row.Rating == " 6" %}
-                            {% assign ratingValue = "Top 5 🌟" %}
+                            {% assign ratingValue = "6/10 👋" %}
+                        {% elsif row.Rating == " 6.5" %}
+                            {% assign ratingValue = "6.5/10 👋" %}
+                        {% elsif row.Rating == " 7" %}
+                            {% assign ratingValue = "7/10 👍" %}
+                        {% elsif row.Rating == " 7.5" %}
+                            {% assign ratingValue = "7.5/10 👍" %}
+                        {% elsif row.Rating == " 8" %}
+                            {% assign ratingValue = "8/10 🙌" %}
+                        {% elsif row.Rating == " 8.5" %}
+                            {% assign ratingValue = "8.5/10 🙌" %}
+                        {% elsif row.Rating == " 9" %}
+                            {% assign ratingValue = "9/10 ❤️" %}
+                        {% elsif row.Rating == " 9.5" %}
+                            {% assign ratingValue = "9.5/10 ❤️" %}
+                        {% elsif row.Rating == " 10" %}
+                            {% assign ratingValue = "10/10 🌟" %}
                         {% endif %}
                         <div class="item rating-{{ row.Rating | strip }}">
                             <span class="name">{{ row.Name }}</span>
