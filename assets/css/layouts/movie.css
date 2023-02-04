@@ -90,33 +90,48 @@
     padding-right: 30px;
 }
 
-.rating-7 {
+.rating-10 {
     background: #17b19d;
     color: #fff;
 }
 
-.rating-6 {
-    background: #17b19d;
-    color: #fff;
-}
-
-.rating-5 {
+.rating-9 {
     background: #4c8200;
     color: #fff;
 }
 
-.rating-4 {
+.rating-8 {
     background: #72a403;
     color: #fff;
 }
 
-.rating-3 {
+.rating-7 {
     background: #9bad0f;
     color: #fff;
 }
 
-.rating-2 {
+.rating-6 {
     background: #dcb20e;
+    color: #fff;
+}
+
+.rating-5 {
+    background: #dcb20e;
+    color: #fff;
+}
+
+.rating-4 {
+    background: #9d100f;
+    color: #fff;
+}
+
+.rating-3 {
+    background: #9d100f;
+    color: #fff;
+}
+
+.rating-2 {
+    background: #9d100f;
     color: #fff;
 }
 
