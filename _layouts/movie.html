@@ -146,6 +146,8 @@
                             {% assign ratingValue = "9.5/10 ❤️" %}
                         {% elsif row.Rating == " 10" %}
                             {% assign ratingValue = "10/10 🌟" %}
+                        {% elsif row.Rating == " 0" %}
+                            {% assign ratingValue = "Not Rated" %}
                         {% endif %}
                         <div class="item rating-{{ row.Rating | strip }}">
                             <span class="name">{{ row.Name }}</span>
@@ -196,6 +198,8 @@
                             {% assign ratingValue = "9.5/10 ❤️" %}
                         {% elsif row.Rating == " 10" %}
                             {% assign ratingValue = "10/10 🌟" %}
+                        {% elsif row.Rating == " 0" %}
+                            {% assign ratingValue = "Not Rated" %}
                         {% endif %}
                         <div class="item rating-{{ row.Rating | strip }}">
                             <span class="name">{{ row.Name }}</span>
@@ -247,6 +251,8 @@
                             {% assign ratingValue = "9.5/10 ❤️" %}
                         {% elsif row.Rating == " 10" %}
                             {% assign ratingValue = "10/10 🌟" %}
+                        {% elsif row.Rating == " 0" %}
+                            {% assign ratingValue = "Not Rated" %}
                         {% endif %}
                         <div class="item rating-{{ row.Rating | strip }}">
                             <span class="name">{{ row.Name }}</span>
@@ -303,6 +309,8 @@
                                 {% assign ratingValue = "9.5/10 ❤️" %}
                             {% elsif row.Rating == " 10" %}
                                 {% assign ratingValue = "10/10 🌟" %}
+                            {% elsif row.Rating == " 0" %}
+                                {% assign ratingValue = "Not Rated" %}
                             {% endif %}
                             {% if lastRating != row.Rating %}
                                 <div class="break"></div>
