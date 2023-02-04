@@ -160,45 +160,45 @@
             <div id="chronological-oldest-newest-list" style="display:none;">
                 <div class="list">
                     {% for row in mydata %}    
-                        {% if row.Rating == " 1" %}
+                        {% if row.Rating == "1" %}
                             {% assign ratingValue = "1/10 👎" %}
-                        {% elsif row.Rating == " 1.5" %}
+                        {% elsif row.Rating == "1.5" %}
                             {% assign ratingValue = "1.5/10 👎" %}
-                        {% elsif row.Rating == " 2" %}
+                        {% elsif row.Rating == "2" %}
                             {% assign ratingValue = "2/10 👎" %}
-                        {% elsif row.Rating == " 2.5" %}
+                        {% elsif row.Rating == "2.5" %}
                             {% assign ratingValue = "2.5/10 👎" %}
-                        {% elsif row.Rating == " 3" %}
+                        {% elsif row.Rating == "3" %}
                             {% assign ratingValue = "3/10 👎" %}
-                        {% elsif row.Rating == " 3.5" %}
+                        {% elsif row.Rating == "3.5" %}
                             {% assign ratingValue = "3.5/10 👎" %}
-                        {% elsif row.Rating == " 4" %}
+                        {% elsif row.Rating == "4" %}
                             {% assign ratingValue = "4/10 👎" %}
-                        {% elsif row.Rating == " 4.5" %}
+                        {% elsif row.Rating == "4.5" %}
                             {% assign ratingValue = "4.5/10 👎" %}
-                        {% elsif row.Rating == " 5" %}
+                        {% elsif row.Rating == "5" %}
                             {% assign ratingValue = "5/10 👋" %}
-                        {% elsif row.Rating == " 5.5" %}
+                        {% elsif row.Rating == "5.5" %}
                             {% assign ratingValue = "5.5/10 👋" %}
-                        {% elsif row.Rating == " 6" %}
+                        {% elsif row.Rating == "6" %}
                             {% assign ratingValue = "6/10 👋" %}
-                        {% elsif row.Rating == " 6.5" %}
+                        {% elsif row.Rating == "6.5" %}
                             {% assign ratingValue = "6.5/10 👋" %}
-                        {% elsif row.Rating == " 7" %}
+                        {% elsif row.Rating == "7" %}
                             {% assign ratingValue = "7/10 👍" %}
-                        {% elsif row.Rating == " 7.5" %}
+                        {% elsif row.Rating == "7.5" %}
                             {% assign ratingValue = "7.5/10 👍" %}
-                        {% elsif row.Rating == " 8" %}
+                        {% elsif row.Rating == "8" %}
                             {% assign ratingValue = "8/10 🙌" %}
-                        {% elsif row.Rating == " 8.5" %}
+                        {% elsif row.Rating == "8.5" %}
                             {% assign ratingValue = "8.5/10 🙌" %}
-                        {% elsif row.Rating == " 9" %}
+                        {% elsif row.Rating == "9" %}
                             {% assign ratingValue = "9/10 ❤️" %}
-                        {% elsif row.Rating == " 9.5" %}
+                        {% elsif row.Rating == "9.5" %}
                             {% assign ratingValue = "9.5/10 ❤️" %}
-                        {% elsif row.Rating == " 10" %}
+                        {% elsif row.Rating == "10" %}
                             {% assign ratingValue = "10/10 🌟" %}
-                        {% elsif row.Rating == " 0" %}
+                        {% elsif row.Rating == "0" %}
                             {% assign ratingValue = "Not Rated" %}
                         {% endif %}
                         <div class="item rating-{{ row.Rating | strip }}">
@@ -213,45 +213,45 @@
                 <div class="list">
                     {% assign mydataAlphabetical = mydata | sort:'Name' %}
                     {% for row in mydataAlphabetical %}   
-                        {% if row.Rating == " 1" %}
+                        {% if row.Rating == "1" %}
                             {% assign ratingValue = "1/10 👎" %}
-                        {% elsif row.Rating == " 1.5" %}
+                        {% elsif row.Rating == "1.5" %}
                             {% assign ratingValue = "1.5/10 👎" %}
-                        {% elsif row.Rating == " 2" %}
+                        {% elsif row.Rating == "2" %}
                             {% assign ratingValue = "2/10 👎" %}
-                        {% elsif row.Rating == " 2.5" %}
+                        {% elsif row.Rating == "2.5" %}
                             {% assign ratingValue = "2.5/10 👎" %}
-                        {% elsif row.Rating == " 3" %}
+                        {% elsif row.Rating == "3" %}
                             {% assign ratingValue = "3/10 👎" %}
-                        {% elsif row.Rating == " 3.5" %}
+                        {% elsif row.Rating == "3.5" %}
                             {% assign ratingValue = "3.5/10 👎" %}
-                        {% elsif row.Rating == " 4" %}
+                        {% elsif row.Rating == "4" %}
                             {% assign ratingValue = "4/10 👎" %}
-                        {% elsif row.Rating == " 4.5" %}
+                        {% elsif row.Rating == "4.5" %}
                             {% assign ratingValue = "4.5/10 👎" %}
-                        {% elsif row.Rating == " 5" %}
+                        {% elsif row.Rating == "5" %}
                             {% assign ratingValue = "5/10 👋" %}
-                        {% elsif row.Rating == " 5.5" %}
+                        {% elsif row.Rating == "5.5" %}
                             {% assign ratingValue = "5.5/10 👋" %}
-                        {% elsif row.Rating == " 6" %}
+                        {% elsif row.Rating == "6" %}
                             {% assign ratingValue = "6/10 👋" %}
-                        {% elsif row.Rating == " 6.5" %}
+                        {% elsif row.Rating == "6.5" %}
                             {% assign ratingValue = "6.5/10 👋" %}
-                        {% elsif row.Rating == " 7" %}
+                        {% elsif row.Rating == "7" %}
                             {% assign ratingValue = "7/10 👍" %}
-                        {% elsif row.Rating == " 7.5" %}
+                        {% elsif row.Rating == "7.5" %}
                             {% assign ratingValue = "7.5/10 👍" %}
-                        {% elsif row.Rating == " 8" %}
+                        {% elsif row.Rating == "8" %}
                             {% assign ratingValue = "8/10 🙌" %}
-                        {% elsif row.Rating == " 8.5" %}
+                        {% elsif row.Rating == "8.5" %}
                             {% assign ratingValue = "8.5/10 🙌" %}
-                        {% elsif row.Rating == " 9" %}
+                        {% elsif row.Rating == "9" %}
                             {% assign ratingValue = "9/10 ❤️" %}
-                        {% elsif row.Rating == " 9.5" %}
+                        {% elsif row.Rating == "9.5" %}
                             {% assign ratingValue = "9.5/10 ❤️" %}
-                        {% elsif row.Rating == " 10" %}
+                        {% elsif row.Rating == "10" %}
                             {% assign ratingValue = "10/10 🌟" %}
-                        {% elsif row.Rating == " 0" %}
+                        {% elsif row.Rating == "0" %}
                             {% assign ratingValue = "Not Rated" %}
                         {% endif %}
                         <div class="item rating-{{ row.Rating | strip }}">
@@ -271,45 +271,45 @@
                         {% for row in ratingsTitleSorted %}
                             {% assign counter = counter | plus:1 %}
                             {% assign currentRating = row.Rating %}
-                            {% if row.Rating == " 1" %}
+                            {% if row.Rating == "1" %}
                                 {% assign ratingValue = "1/10 👎" %}
-                            {% elsif row.Rating == " 1.5" %}
+                            {% elsif row.Rating == "1.5" %}
                                 {% assign ratingValue = "1.5/10 👎" %}
-                            {% elsif row.Rating == " 2" %}
+                            {% elsif row.Rating == "2" %}
                                 {% assign ratingValue = "2/10 👎" %}
-                            {% elsif row.Rating == " 2.5" %}
+                            {% elsif row.Rating == "2.5" %}
                                 {% assign ratingValue = "2.5/10 👎" %}
-                            {% elsif row.Rating == " 3" %}
+                            {% elsif row.Rating == "3" %}
                                 {% assign ratingValue = "3/10 👎" %}
-                            {% elsif row.Rating == " 3.5" %}
+                            {% elsif row.Rating == "3.5" %}
                                 {% assign ratingValue = "3.5/10 👎" %}
-                            {% elsif row.Rating == " 4" %}
+                            {% elsif row.Rating == "4" %}
                                 {% assign ratingValue = "4/10 👎" %}
-                            {% elsif row.Rating == " 4.5" %}
+                            {% elsif row.Rating == "4.5" %}
                                 {% assign ratingValue = "4.5/10 👎" %}
-                            {% elsif row.Rating == " 5" %}
+                            {% elsif row.Rating == "5" %}
                                 {% assign ratingValue = "5/10 👋" %}
-                            {% elsif row.Rating == " 5.5" %}
+                            {% elsif row.Rating == "5.5" %}
                                 {% assign ratingValue = "5.5/10 👋" %}
-                            {% elsif row.Rating == " 6" %}
+                            {% elsif row.Rating == "6" %}
                                 {% assign ratingValue = "6/10 👋" %}
-                            {% elsif row.Rating == " 6.5" %}
+                            {% elsif row.Rating == "6.5" %}
                                 {% assign ratingValue = "6.5/10 👋" %}
-                            {% elsif row.Rating == " 7" %}
+                            {% elsif row.Rating == "7" %}
                                 {% assign ratingValue = "7/10 👍" %}
-                            {% elsif row.Rating == " 7.5" %}
+                            {% elsif row.Rating == "7.5" %}
                                 {% assign ratingValue = "7.5/10 👍" %}
-                            {% elsif row.Rating == " 8" %}
+                            {% elsif row.Rating == "8" %}
                                 {% assign ratingValue = "8/10 🙌" %}
-                            {% elsif row.Rating == " 8.5" %}
+                            {% elsif row.Rating == "8.5" %}
                                 {% assign ratingValue = "8.5/10 🙌" %}
-                            {% elsif row.Rating == " 9" %}
+                            {% elsif row.Rating == "9" %}
                                 {% assign ratingValue = "9/10 ❤️" %}
-                            {% elsif row.Rating == " 9.5" %}
+                            {% elsif row.Rating == "9.5" %}
                                 {% assign ratingValue = "9.5/10 ❤️" %}
-                            {% elsif row.Rating == " 10" %}
+                            {% elsif row.Rating == "10" %}
                                 {% assign ratingValue = "10/10 🌟" %}
-                            {% elsif row.Rating == " 0" %}
+                            {% elsif row.Rating == "0" %}
                                 {% assign ratingValue = "Not Rated" %}
                             {% endif %}
                             {% if lastRating != row.Rating %}
