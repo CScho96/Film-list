@@ -30,7 +30,7 @@
             <div class="list">
                 <p class="top10">Top 10:</p>
                 <div class="break"></div>
-                {% assign top10Category = ratingsSorted[9].items | sort:'Name' %}
+                {% assign top10Category = ratingsSorted[10].items | sort:'Name' %}
 
                 {% for row in top10Category %}
                     <div class="top-10-item rating-{{ row.Rating | strip }}">
