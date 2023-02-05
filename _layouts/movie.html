@@ -271,7 +271,7 @@
             <div id="grouped-list" style="display:none;">
                 <div class="list">
                     {% assign counter = 0 %}
-                    {% assign lastRating = " 4" %}
+                    {% assign lastRating = "0" %}
                     {% for r in ratingsSorted %}
                         {% assign ratingsTitleSorted = r.items | sort:'Name' %}
                         {% for row in ratingsTitleSorted %}
