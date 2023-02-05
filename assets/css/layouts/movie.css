@@ -47,6 +47,7 @@
     padding: 5px 7px 5px 7px;
     border: 1px solid #111;
     min-width: 107px;
+    border-radius: 5px;
 }
 
 .movie-top {
@@ -95,56 +96,67 @@
 .rating-10 {
     background: #17b19d;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-9 {
     background: #4c8200;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-8 {
     background: #72a403;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-7.5 {
     background: #9bad0f;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-7 {
     background: #9bad0f;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-6 {
     background: #dcb20e;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-5 {
     background: #dcb20e;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-4 {
     background: #9d100f;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-3 {
     background: #9d100f;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-2 {
     background: #9d100f;
     color: #fff;
+    border-radius: 5px;
 }
 
 .rating-1 {
     background: #9d100f;
     color: #fff;
+    border-radius: 5px;
 }
 
 .break {
