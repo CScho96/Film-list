@@ -4,8 +4,8 @@ Knowing,0
 Dredd,0
 White House Down,0
 Die Hard 4,0
-Dark Knight,0
-Kingdom of Heaven,0
+Dark Knight,100
+Kingdom of Heaven (DC),90
 Bourne Ultimatum,0
 Alex Cross,0
 Quantum of Solace,0
@@ -30,7 +30,7 @@ Transformers: Dark of the Moon,0
 Transporter 3,0
 Transformers,0
 Project X,0
-Inception,0
+Inception,95
 Captain America: The Winter Soldier,0
 Ocean's Thirteen,0
 Elf,0
@@ -64,7 +64,7 @@ The Call,0
 Crank 2,0
 Salt,0
 Die Hard 2,0
-Casino Royale,0
+Casino Royale,100
 Harry Potter and the Philosopher's Stone,0
 Wild Child,0
 Texas Chainsaw 3D,0
@@ -99,7 +99,7 @@ Collateral,0
 Wanted,0
 Spiderman 2,0
 Snowpiercer,0
-Bourne Identity,0
+Bourne Identity,100
 Snitch,0
 St Trinian's 2,0
 Up,0
@@ -115,7 +115,7 @@ The Hangover ,0
 In Time,0
 Defiance,0
 Bounty Killer,0
-Wolf of Wall Street,0
+Wolf of Wall Street,100
 King's Speech,0
 Tinker Tailor Soldier Spy,0
 The Expendables 2,0
@@ -150,7 +150,7 @@ This is the End,0
 I am Number Four,0
 Star Wars III,0
 22 Jump street,0
-Sin City: A Dame to Kill For,0
+Sin City: A Dame to Kill For,90
 Killers,0
 Hancock,0
 Now You See Me,0
@@ -160,7 +160,7 @@ Good Will Hunting,0
 Four Lions,0
 Bruce Almighty,0
 Transformers: Revenge of the Fallen,0
-No Country For Old Men,0
+No Country For Old Men,100
 Safe,0
 Chef,0
 Mission Impossible III,0
@@ -174,7 +174,7 @@ Fast and Furious 7,0
 The Bank Job,0
 Stormrider,0
 127 Hours,0
-Man of Steel,0
+Man of Steel,90
 The Inbetweeners Movie,0
 I am Legend,0
 Ocean's Eleven,0
@@ -193,7 +193,7 @@ Neighbours,0
 National Treasure 2,0
 21,0
 Elysium,0
-Troy,0
+Troy,90
 The International,0
 RED,0
 Raiders of the Lost Ark,0
@@ -204,7 +204,7 @@ Runner Runner,0
 Lucy,0
 London Boulevard,0
 Bourne Supremacy,0
-Gladiator,0
+Gladiator,100
 21 and Over,0
 Gran Torino,0
 Star Wars IV,0
@@ -223,13 +223,13 @@ Broken City,0
 Terminator Salvation,0
 We're the Millers,0
 Bad Johnson,0
-Lord of the Rings: The Return of the King,0
+Lord of the Rings: The Return of the King,100
 Jack Reacher,0
 Star Wars VI,0
 Pursuit of Happyness,0
 Superbad,0
 Horrible Bosses 2,0
-Watchmen,0
+Watchmen (UC),90
 Spiderman,0
 Pink Panther,0
 Star Wars II,0
@@ -244,7 +244,7 @@ The Company You Keep,0
 Shooter,0
 Transporter 2,0
 Limitless,0
-Lord of the Rings: The Two Towers,0
+Lord of the Rings: The Two Towers,100
 X-men,0
 Sinister,0
 Divergent,0
@@ -281,7 +281,7 @@ Fast and Furious,0
 Avatar,0
 Iron Man 3,0
 Grown Ups,0
-Lord of the Rings: The Fellowship of the Ring,0
+Lord of the Rings: The Fellowship of the Ring,100
 The Kingdom,0
 Unknown,0
 Avenegers Assemble,0
@@ -304,16 +304,16 @@ The Cold Light of Day,0
 Fast and Furious 5,0
 Harry Potter and the Deathly Hallows Part 2,0
 Zombieland,0
-Shutter Island,0
+Shutter Island,100
 13 Sins,0
 This is Where I Leave You,0
 Crash,0
 The Equalizer,0
-City of God,0
+City of God,100
 Captains of the Sand,0
 The Judge,0
 The Drop,0
-Gone Girl,0
+Gone Girl,90
 Green Lantern,0
 A Walk Among the Tombstones,0
 The Inbetweeners 2 ,0
@@ -338,9 +338,9 @@ Legend,0
 Antman,0
 Southpaw,0
 Avengers: Age of Ultron,0
-Ex Machina,0
+Ex Machina,100
 Mad Max: Fury Road,0
-Leon The Professional,0
+Leon The Professional,90
 Terminator: Genisys,0
 Furious Seven,0
 The Man From UNCLE,0
@@ -350,27 +350,27 @@ Hunger Games (all),0
 Entourage,0
 The Hateful Eight,0
 Riddick,0
-Layer Cake,0
+Layer Cake,90
 Lucky Number Slevin,0
-Snatch,0
-"Lock, Stock and Two Smoking Barrels",0
+Snatch,100
+Lock, Stock and Two Smoking Barrels,90
 Sexy Beast,0
 Star Wars Episode VII,0
 Dom Hemingway,0
-Batman v Superman,0
+Batman v Superman: Dawn of Justice (DC),90
 Kidulthood,0
 Deadpool,0
 Pulp Fiction,101
-Se7en,0
+Seven,100
 Green Street Hooligans,0
 The Usual Suspects,0
 13 Hours: The Secret Soldiers of Benghazi,0
-The Big Short,0
+The Big Short,90
 Divergent: Allegiant,0
 Cockneys vs Zombies,0
 London Has Fallen,0
 The Martian,0
-Edge of Tomorrow,0
+Edge of Tomorrow,100
 Marauders,0
 10 Cloverfield Lane,0
 Dirty Grandpa,0
@@ -382,7 +382,7 @@ Ill Manors,0
 Revolver,0
 The Shallows,0
 Warcraft,0
-The Nice Guys,0
+The Nice Guys,95
 Triple 9,0
 Central Intelligence,0
 Argo,0
@@ -416,17 +416,17 @@ The Accountant,0
 Steve Jobs,0
 ARQ,0
 Deepwater Horizon,0
-Alien,0
-Aliens,0
-Alien 3,0
+Alien,95
+Aliens,90
+Alien 3,70
 Jack Reacher: Never Look Back,0
 Arrival,101
 Nocturnal Animals,101
 Hacksaw Ridge,0
 The Girl On The Train,0
-American Psycho,0
+American Psycho,90
 Hell or High Water,0
-Blade Runner,0
+Blade Runner,100
 Moonlight,0
 Manchester By The Sea,0
 Johnny English,0
@@ -440,7 +440,7 @@ The Big Lebowski,0
 Rogue One: A Star Wars Story,0
 100 Streets,0
 Live By Night,0
-In Bruges,0
+In Bruges,100
 The Godfather,101
 The Godfather: Part II,101
 Get Out,0
@@ -454,11 +454,11 @@ Brotherhood,0
 Kong: Skull Island,0
 Free Fire,0
 Ghost In The Shell,0
-American History X,0
+American History X,100
 Hands of Stone,0
 Memento,0
 A Bronx Tale,0
-Dunkirk,0
+Dunkirk,100
 Shot Caller,0
 King Arthur: Legend Of The Sword,0
 Alien: Covenant,0
@@ -474,7 +474,7 @@ Demolition,0
 Chips,0
 Fight Club,101
 Drive,0
-Apocalypse Now,0
+Apocalypse Now,100
 The Hitman's Bodyguard,0
 Wonderwoman,0
 Blue Ruin,0
@@ -500,7 +500,7 @@ Goodfellas,90
 Black Swan,90
 Taxi Driver,90
 Creed,0
-Raging Bull,90
+Raging Bull,95
 Kill Bill: Volume 1,0
 Kill Bill: Volume 2,0
 Thor: Ragnarok,0
