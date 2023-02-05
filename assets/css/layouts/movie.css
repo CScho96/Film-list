@@ -24,7 +24,7 @@
     transform: translateY(25%);
 }
 
-.top5 {
+.top10 {
     padding-left: 15px;
     font-weight: 400;
 }
@@ -40,7 +40,7 @@
     border: 1px solid #111;
 }
 
-.top-5-item {
+.top-10-item {
     margin: 0 0 8px 8px;
     padding: 5px 7px 5px 7px;
     border: 1px solid #111;
@@ -60,7 +60,7 @@
     font-size: 17px;
 }
 
-.top-5-item span:first-child {
+.top-10-item span:first-child {
     font-weight: 500;
     font-size: 16px;
 }
@@ -70,13 +70,13 @@
     font-size: 17px;
 }
 
-.top-5-item span:nth-child(2n) {
+.top-10-item span:nth-child(2n) {
     display: block;
     padding-top: 3px;
     font-size: 13px;
 }
 
-.top-5-item span:nth-child(3n) {
+.top-10-item span:nth-child(3n) {
     display: block;
     font-size: 15px;
 }
