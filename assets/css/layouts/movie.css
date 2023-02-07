@@ -71,7 +71,7 @@
 
 .item span:nth-child(2n) {
     display: block;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .top-10-item span:nth-child(2n) {
