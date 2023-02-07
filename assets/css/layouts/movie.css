@@ -66,7 +66,7 @@
 
 .top-10-item span:first-child {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .item span:nth-child(2n) {
@@ -77,12 +77,12 @@
 .top-10-item span:nth-child(2n) {
     display: block;
     padding-top: 3px;
-    font-size: 13px;
+    font-size: 17px;
 }
 
 .top-10-item span:nth-child(3n) {
     display: block;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .sorting {
