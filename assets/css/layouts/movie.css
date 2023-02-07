@@ -71,18 +71,18 @@
 
 .item span:nth-child(2n) {
     display: block;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .top-10-item span:nth-child(2n) {
     display: block;
     padding-top: 3px;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .top-10-item span:nth-child(3n) {
     display: block;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .sorting {
