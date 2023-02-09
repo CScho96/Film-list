@@ -205,7 +205,7 @@
                         {% elsif row.Rating == "0" %}
                             {% assign ratingValue = "Not Rated" %}
                         {% endif %}
-                        <div class="item rating-{{ row.Rating | strip }}">
+                        <div class="item rating-{{ row.Rating | strip }}" title="{{ row.Review }}">
                             <span class="name">{{ row.Name }}</span>
                             <span class="rating">{{ ratingValue }}</span>
                         </div>
@@ -260,7 +260,7 @@
                         {% elsif row.Rating == "0" %}
                             {% assign ratingValue = "Not Rated" %}
                         {% endif %}
-                        <div class="item rating-{{ row.Rating | strip }}">
+                        <div class="item rating-{{ row.Rating | strip }}" title="{{ row.Review }}">
                             <span class="name">{{ row.Name }}</span>
                             <span class="rating">{{ ratingValue }}</span>
                         </div>
@@ -326,7 +326,7 @@
                                 {% assign rating_array = rating_array | push: counter %}
                                 {% assign counter = 0 %}
                             {% endif %}
-                            <div class="item rating-{{ row.Rating | strip }}">
+                            <div class="item rating-{{ row.Rating | strip }}" title="{{ row.Review }}">
                                 <span class="name">{{ row.Name }}</span>
                                 <span class="rating">{{ ratingValue }}</span>
                             </div>
