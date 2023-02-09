@@ -151,10 +151,9 @@
                         {% elsif row.Rating == "0" %}
                             {% assign ratingValue = "Not Rated" %}
                         {% endif %}
-                        <div class="item rating-{{ row.Rating | strip }}" onmouseover="showReview('{{ row.Review }}')" onmouseout="hideReview()">
+                        <div class="item rating-{{ row.Rating | strip }}" title="{{ row.Review }}">
                             <span class="name">{{ row.Name }}</span>
                             <span class="rating">{{ ratingValue }}</span>
-                            <span id="review" style="display:none;">{{ row.Review }}</span>
                         </div>
                     {% endfor %}
                 </div>
@@ -340,18 +339,7 @@
         </div>
     </section>
 
-    <script>
-         function showReview(review) {
-            const reviewElement = document.getElementById('review');
-            reviewElement.style.display = "block";
-            reviewElement.innerHTML = review;
-        }
-
-        function hideReview() {
-            const reviewElement = document.getElementById('review');
-            reviewElement.style.display = "none";
-        }
-        
+    <script>                 
         function orderChronologicallyNewestOldest() {
             const groupedList = document.getElementById('grouped-list');
             groupedList.style.display = "none";
