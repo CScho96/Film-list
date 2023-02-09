@@ -154,7 +154,7 @@
                         <div class="item rating-{{ row.Rating | strip }}" onmouseover="showReview('{{ row.Review }}')" onmouseout="hideReview()">
                             <span class="name">{{ row.Name }}</span>
                             <span class="rating">{{ ratingValue }}</span>
-                            <div id="review" style="display:none;">{{ row.Review }}</div>
+                            <span id="review" style="display:none;">{{ row.Review }}</span>
                         </div>
                     {% endfor %}
                 </div>
