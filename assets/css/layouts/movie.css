@@ -245,3 +245,7 @@
     align-items: center;
     justify-content: center;
 }
+.item:hover {
+    filter: brightness(105%);
+    box-shadow: 5px 6px 9px #1a1a1a;
+}
