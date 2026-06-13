@@ -1,7 +1,14 @@
 <head>
-<!--    <title>{{ site.title }} | {{ page.title }}</title>-->
     <meta charset="utf-8">
-    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.title | default: site.title }} — a personal ratings list.">
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0e1420">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
-    <link rel="icon" href="https://img.icons8.com/metro/26/000000/movie.png" type="image/x-icon" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
 </head>

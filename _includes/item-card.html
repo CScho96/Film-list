@@ -1,0 +1,28 @@
+{%- assign r = include.row.Rating | strip | plus: 0 -%}
+{%- if r >= 98 -%}
+    {%- assign band = 10 -%}
+{%- elsif r >= 50 -%}
+    {%- assign band = r | divided_by: 10 -%}
+{%- elsif r > 0 -%}
+    {%- assign band = "low" -%}
+{%- else -%}
+    {%- assign band = 0 -%}
+{%- endif -%}
+{%- assign rem = r | modulo: 10 -%}
+{%- assign review = include.row.Review | strip -%}
+<div class="item band-{{ band }}{% if review != "" %} has-review{% endif %}" data-name="{{ include.row.Name | strip | escape }}" data-rating="{{ r }}" data-index="{{ include.index }}">
+    <span class="name">{{ include.row.Name }}</span>
+    <span class="rating">
+        {%- if r == 0 -%}
+            Not Rated
+        {%- elsif r >= 98 -%}
+            10/10 🌟
+        {%- else -%}
+            {{ r | divided_by: 10 }}{% if rem > 0 %}.{{ rem }}{% endif %}/10
+            {%- if r >= 90 %} ❤️{% elsif r >= 80 %} 🙌{% elsif r >= 70 %} 👍{% elsif r >= 50 %} 👋{% else %} 👎{% endif -%}
+        {%- endif -%}
+    </span>
+    {%- if review != "" %}
+    <span class="review">{{ review }}</span>
+    {%- endif %}
+</div>

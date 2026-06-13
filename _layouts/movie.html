@@ -1,414 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {% include head.html %}
 <body>
     {% include masthead.html %}
+
+    {% assign mydata = site.data.movie-ratings %}
+    {% if page.dataset == "tv shows" %}
+        {% assign mydata = site.data.tv-ratings %}
+    {% elsif page.dataset == "books" %}
+        {% assign mydata = site.data.book-ratings %}
+    {% elsif page.dataset == "restaurants" %}
+        {% assign mydata = site.data.restaurant-ratings %}
+    {% endif %}
+
     <section class="main">
-        {% assign mydata = site.data.movie-ratings %}
-        {% if page.dataset == "movies" %}
-            {% assign ratings = site.data.movie-ratings | group_by: 'Rating' %}
-            {% assign ratingsSorted = (ratings | sort:'name') | reverse %}
-        {% elsif page.dataset == "tv shows" %}
-            {% assign mydata = site.data.tv-ratings %}
-            {% assign ratings = site.data.tv-ratings | group_by: 'Rating' %}
-            {% assign ratingsSorted = (ratings | sort:'name') | reverse %}
-        {% elsif page.dataset == "books" %}	
-            {% assign mydata = site.data.book-ratings %}	
-            {% assign ratings = site.data.book-ratings | group_by: 'Rating' %}	
-            {% assign ratingsSorted = (ratings | sort:'name') | reverse %}	
-        {% elsif page.dataset == "restaurants" %}	
-            {% assign mydata = site.data.restaurant-ratings %}	
-            {% assign ratings = site.data.restaurant-ratings | group_by: 'Rating' %}	
-            {% assign ratingsSorted = (ratings | sort:'name') | reverse %}
-        {% endif %}
-
-        <div class="movie-top">
-            <p class="total">Total {{ page.dataset }}: {{ mydata.size }}</p>
-
-            <div class="vertical-line"></div>
-
-            <div class="list">
-                <p class="top10">Top 10:</p>
-                <div class="break"></div>
-                {% assign top10Category = ratingsSorted[0].items | sort:'Name' %}
-
-                {% for row in top10Category %}
-                    <div class="top-10-item rating-{{ row.Rating | strip }}">
-                        <span class="name">{{ row.Name }}</span>
-                        <span class="rating">Top 10 🚀</span>                        
-                    </div>
-                {% endfor %}
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-value">{{ mydata.size }}</span>
+                <span class="stat-label">Total {{ page.dataset }}</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value" id="stat-rated">–</span>
+                <span class="stat-label">Rated</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value" id="stat-average">–</span>
+                <span class="stat-label">Average</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value" id="stat-perfect">–</span>
+                <span class="stat-label">10/10s</span>
+            </div>
+            <div class="stat stat-histogram">
+                <div class="histogram" id="histogram"></div>
+                <span class="stat-label">Ratings spread</span>
             </div>
         </div>
 
-        <div class="filter-wrap"><input type="text" id="filter" onkeyup="filter()" placeholder="Search..." /></div>
-
-        <div class="sorting">
-            <label>Sort:</label>
-
-            <input 
-                type="radio" 
-                name="order" 
-                id="orderChronologicallyNewestOldest"
-                onclick="orderChronologicallyNewestOldest()" 
-                checked
-            >
-            <label 
-                class="sort-radio-button-label"
-                for="orderChronologicallyNewestOldest"
-            >
-                Chronological (Newest - Oldest)
-            </label>
-
-            <input 
-                type="radio" 
-                name="order" 
-                id="orderChronologicallyOldestNewest"
-                class="sortRadioButton" 
-                onclick="orderChronologicallyOldestNewest()" 
-            >
-            <label 
-                class="sort-radio-button-label" 
-                for="orderChronologicallyOldestNewest"
-            >
-                Chronological (Oldest - Newest)
-            </label>
-
-            <input 
-                type="radio"
-                name="order"  
-                id="orderAlphabetically"
-                class="sortRadioButton" 
-                onclick="orderAlphabetically()" 
-            >
-            <label 
-                class="sort-radio-button-label"
-                for="orderAlphabetically"
-            >
-                Alphabetical
-            </label>
-
-            <input 
-                type="radio" 
-                name="order" 
-                id="orderGrouped"
-                class="sortRadioButton" 
-                onclick="orderGrouped()"
-            >
-            <label 
-                class="sort-radio-button-label"
-                for="orderGrouped"
-            >
-                Ratings Grouped
-            </label>
+        <div class="hall-of-fame" id="hall-of-fame" hidden>
+            <h2 class="hof-title">🏆 Top 10</h2>
+            <div class="hof-list" id="top10"></div>
         </div>
 
-        <div>
-            <div id="chronological-newest-oldest-list">
-                <div class="list">
-                    {% assign myDataReversed = (mydata | reverse) %}
-                    {% for row in myDataReversed %}    
-                        {% if row.Rating == "10" %}
-                            {% assign ratingValue = "1/10 👎" %}
-                        {% elsif row.Rating == "15" %}
-                            {% assign ratingValue = "1.5/10 👎" %}
-                        {% elsif row.Rating == "20" %}
-                            {% assign ratingValue = "2/10 👎" %}
-                        {% elsif row.Rating == "25" %}
-                            {% assign ratingValue = "2.5/10 👎" %}
-                        {% elsif row.Rating == "30" %}
-                            {% assign ratingValue = "3/10 👎" %}
-                        {% elsif row.Rating == "35" %}
-                            {% assign ratingValue = "3.5/10 👎" %}
-                        {% elsif row.Rating == "40" %}
-                            {% assign ratingValue = "4/10 👎" %}
-                        {% elsif row.Rating == "45" %}
-                            {% assign ratingValue = "4.5/10 👎" %}
-                        {% elsif row.Rating == "50" %}
-                            {% assign ratingValue = "5/10 👋" %}
-                        {% elsif row.Rating == "55" %}
-                            {% assign ratingValue = "5.5/10 👋" %}
-                        {% elsif row.Rating == "60" %}
-                            {% assign ratingValue = "6/10 👋" %}
-                        {% elsif row.Rating == "65" %}
-                            {% assign ratingValue = "6.5/10 👋" %}
-                        {% elsif row.Rating == "70" %}
-                            {% assign ratingValue = "7/10 👍" %}
-                        {% elsif row.Rating == "75" %}
-                            {% assign ratingValue = "7.5/10 👍" %}
-                        {% elsif row.Rating == "80" %}
-                            {% assign ratingValue = "8/10 🙌" %}
-                        {% elsif row.Rating == "85" %}
-                            {% assign ratingValue = "8.5/10 🙌" %}
-                        {% elsif row.Rating == "90" %}
-                            {% assign ratingValue = "9/10 ❤️" %}
-                        {% elsif row.Rating == "95" %}
-                            {% assign ratingValue = "9.5/10 ❤️" %}
-                        {% elsif row.Rating == "98" %}
-                            {% assign ratingValue = "10/10 🌟" %}
-                        {% elsif row.Rating == "99" %}
-                            {% assign ratingValue = "10/10 🌟" %}
-                        {% elsif row.Rating == "0" %}
-                            {% assign ratingValue = "Not Rated" %}
-                        {% endif %}
-                        <div class="item rating-{{ row.Rating | strip }}" title="{{ row.Review }}">
-                            <span class="name">{{ row.Name }}</span>
-                            <span class="rating">{{ ratingValue }}</span>
-                        </div>
-                    {% endfor %}
-                </div>
+        <div class="toolbar">
+            <div class="search-wrap">
+                <input type="search" id="filter" placeholder="Search {{ page.dataset }}…" autocomplete="off">
+                <button type="button" id="clear-search" class="clear-search" hidden aria-label="Clear search">✕</button>
             </div>
+            <div class="segmented" role="radiogroup" aria-label="Sort order">
+                <input type="radio" name="order" id="sort-newest" value="newest" checked>
+                <label for="sort-newest">Newest</label>
+                <input type="radio" name="order" id="sort-oldest" value="oldest">
+                <label for="sort-oldest">Oldest</label>
+                <input type="radio" name="order" id="sort-alpha" value="alpha">
+                <label for="sort-alpha">A–Z</label>
+                <input type="radio" name="order" id="sort-grouped" value="grouped">
+                <label for="sort-grouped">By rating</label>
+            </div>
+            <button type="button" id="random-pick" class="random-pick">🎲 Surprise me</button>
+            <span class="match-count" id="match-count"></span>
+        </div>
 
-            <div id="chronological-oldest-newest-list" style="display:none;">
-                <div class="list">
-                    {% for row in mydata %}    
-                        {% if row.Rating == "10" %}
-                            {% assign ratingValue = "1/10 👎" %}
-                        {% elsif row.Rating == "15" %}
-                            {% assign ratingValue = "1.5/10 👎" %}
-                        {% elsif row.Rating == "20" %}
-                            {% assign ratingValue = "2/10 👎" %}
-                        {% elsif row.Rating == "25" %}
-                            {% assign ratingValue = "2.5/10 👎" %}
-                        {% elsif row.Rating == "30" %}
-                            {% assign ratingValue = "3/10 👎" %}
-                        {% elsif row.Rating == "35" %}
-                            {% assign ratingValue = "3.5/10 👎" %}
-                        {% elsif row.Rating == "40" %}
-                            {% assign ratingValue = "4/10 👎" %}
-                        {% elsif row.Rating == "45" %}
-                            {% assign ratingValue = "4.5/10 👎" %}
-                        {% elsif row.Rating == "50" %}
-                            {% assign ratingValue = "5/10 👋" %}
-                        {% elsif row.Rating == "55" %}
-                            {% assign ratingValue = "5.5/10 👋" %}
-                        {% elsif row.Rating == "60" %}
-                            {% assign ratingValue = "6/10 👋" %}
-                        {% elsif row.Rating == "65" %}
-                            {% assign ratingValue = "6.5/10 👋" %}
-                        {% elsif row.Rating == "70" %}
-                            {% assign ratingValue = "7/10 👍" %}
-                        {% elsif row.Rating == "75" %}
-                            {% assign ratingValue = "7.5/10 👍" %}
-                        {% elsif row.Rating == "80" %}
-                            {% assign ratingValue = "8/10 🙌" %}
-                        {% elsif row.Rating == "85" %}
-                            {% assign ratingValue = "8.5/10 🙌" %}
-                        {% elsif row.Rating == "90" %}
-                            {% assign ratingValue = "9/10 ❤️" %}
-                        {% elsif row.Rating == "95" %}
-                            {% assign ratingValue = "9.5/10 ❤️" %}
-                        {% elsif row.Rating == "98" %}
-                            {% assign ratingValue = "10/10 🌟" %}
-                        {% elsif row.Rating == "99" %}
-                            {% assign ratingValue = "10/10 🌟" %}
-                        {% elsif row.Rating == "0" %}
-                            {% assign ratingValue = "Not Rated" %}
-                        {% endif %}
-                        <div class="item rating-{{ row.Rating | strip }}" title="{{ row.Review }}">
-                            <span class="name">{{ row.Name }}</span>
-                            <span class="rating">{{ ratingValue }}</span>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div id="alphabetical-list" style="display:none;">
-                <div class="list">
-                    {% assign mydataAlphabetical = mydata | sort:'Name' %}
-                    {% for row in mydataAlphabetical %}   
-                        {% if row.Rating == "10" %}
-                            {% assign ratingValue = "1/10 👎" %}
-                        {% elsif row.Rating == "15" %}
-                            {% assign ratingValue = "1.5/10 👎" %}
-                        {% elsif row.Rating == "20" %}
-                            {% assign ratingValue = "2/10 👎" %}
-                        {% elsif row.Rating == "25" %}
-                            {% assign ratingValue = "2.5/10 👎" %}
-                        {% elsif row.Rating == "30" %}
-                            {% assign ratingValue = "3/10 👎" %}
-                        {% elsif row.Rating == "35" %}
-                            {% assign ratingValue = "3.5/10 👎" %}
-                        {% elsif row.Rating == "40" %}
-                            {% assign ratingValue = "4/10 👎" %}
-                        {% elsif row.Rating == "45" %}
-                            {% assign ratingValue = "4.5/10 👎" %}
-                        {% elsif row.Rating == "50" %}
-                            {% assign ratingValue = "5/10 👋" %}
-                        {% elsif row.Rating == "55" %}
-                            {% assign ratingValue = "5.5/10 👋" %}
-                        {% elsif row.Rating == "60" %}
-                            {% assign ratingValue = "6/10 👋" %}
-                        {% elsif row.Rating == "65" %}
-                            {% assign ratingValue = "6.5/10 👋" %}
-                        {% elsif row.Rating == "70" %}
-                            {% assign ratingValue = "7/10 👍" %}
-                        {% elsif row.Rating == "75" %}
-                            {% assign ratingValue = "7.5/10 👍" %}
-                        {% elsif row.Rating == "80" %}
-                            {% assign ratingValue = "8/10 🙌" %}
-                        {% elsif row.Rating == "85" %}
-                            {% assign ratingValue = "8.5/10 🙌" %}
-                        {% elsif row.Rating == "90" %}
-                            {% assign ratingValue = "9/10 ❤️" %}
-                        {% elsif row.Rating == "95" %}
-                            {% assign ratingValue = "9.5/10 ❤️" %}
-                        {% elsif row.Rating == "98" %}
-                            {% assign ratingValue = "10/10 🌟" %}
-                        {% elsif row.Rating == "99" %}
-                            {% assign ratingValue = "10/10 🌟" %}
-                        {% elsif row.Rating == "0" %}
-                            {% assign ratingValue = "Not Rated" %}
-                        {% endif %}
-                        <div class="item rating-{{ row.Rating | strip }}" title="{{ row.Review }}">
-                            <span class="name">{{ row.Name }}</span>
-                            <span class="rating">{{ ratingValue }}</span>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div id="grouped-list" style="display:none;">
-                <div class="list">
-                    {% assign counter = 0 %}
-                    {% assign lastRating = "101" %}
-                    {% for r in ratingsSorted %}
-                        {% assign ratingsTitleSorted = r.items | sort:'Name' %}
-                        {% for row in ratingsTitleSorted %}
-                            {% assign counter = counter | plus:1 %}
-                            {% assign currentRating = row.Rating %}
-                            {% if row.Rating == "10" %}
-                                {% assign ratingValue = "1/10 👎" %}
-                            {% elsif row.Rating == "15" %}
-                                {% assign ratingValue = "1.5/10 👎" %}
-                            {% elsif row.Rating == "20" %}
-                                {% assign ratingValue = "2/10 👎" %}
-                            {% elsif row.Rating == "25" %}
-                                {% assign ratingValue = "2.5/10 👎" %}
-                            {% elsif row.Rating == "30" %}
-                                {% assign ratingValue = "3/10 👎" %}
-                            {% elsif row.Rating == "35" %}
-                                {% assign ratingValue = "3.5/10 👎" %}
-                            {% elsif row.Rating == "40" %}
-                                {% assign ratingValue = "4/10 👎" %}
-                            {% elsif row.Rating == "45" %}
-                                {% assign ratingValue = "4.5/10 👎" %}
-                            {% elsif row.Rating == "50" %}
-                                {% assign ratingValue = "5/10 👋" %}
-                            {% elsif row.Rating == "55" %}
-                                {% assign ratingValue = "5.5/10 👋" %}
-                            {% elsif row.Rating == "60" %}
-                                {% assign ratingValue = "6/10 👋" %}
-                            {% elsif row.Rating == "65" %}
-                                {% assign ratingValue = "6.5/10 👋" %}
-                            {% elsif row.Rating == "70" %}
-                                {% assign ratingValue = "7/10 👍" %}
-                            {% elsif row.Rating == "75" %}
-                                {% assign ratingValue = "7.5/10 👍" %}
-                            {% elsif row.Rating == "80" %}
-                                {% assign ratingValue = "8/10 🙌" %}
-                            {% elsif row.Rating == "85" %}
-                                {% assign ratingValue = "8.5/10 🙌" %}
-                            {% elsif row.Rating == "90" %}
-                                {% assign ratingValue = "9/10 ❤️" %}
-                            {% elsif row.Rating == "95" %}
-                                {% assign ratingValue = "9.5/10 ❤️" %}
-                            {% elsif row.Rating == "98" %}
-                                {% assign ratingValue = "10/10 🌟" %}
-                            {% elsif row.Rating == "99" %}
-                                {% assign ratingValue = "10/10 🌟" %}
-                            {% elsif row.Rating == "0" %}
-                                {% assign ratingValue = "Not Rated" %}
-                            {% endif %}
-                            {% if lastRating != row.Rating %}
-                                <div class="break"></div>
-                                {% assign lastRating = row.Rating %}
-                                {% assign rating_array = rating_array | push: counter %}
-                                {% assign counter = 0 %}
-                            {% endif %}
-                            <div class="item rating-{{ row.Rating | strip }}" title="{{ row.Review }}">
-                                <span class="name">{{ row.Name }}</span>
-                                <span class="rating">{{ ratingValue }}</span>
-                            </div>
-                        {% endfor %}
-                    {% endfor %}
-                    {% assign counter = counter | plus:1 %}
-                    {% assign rating_array = rating_array | push: counter %}
-                </div>
-            </div>
+        <div class="list" id="items">
+            {%- for row in mydata -%}
+                {% include item-card.html row=row index=forloop.index %}
+            {%- endfor -%}
         </div>
     </section>
 
-    <script>                 
-        function orderChronologicallyNewestOldest() {
-            const groupedList = document.getElementById('grouped-list');
-            groupedList.style.display = "none";
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
 
-            const alphabeticalList = document.getElementById('alphabetical-list');
-            alphabeticalList.style.display = "none";
-
-            const chronologicalOldestNewestList = document.getElementById('chronological-oldest-newest-list');
-            chronologicalOldestNewestList.style.display = "none";
-
-            const chronologicalNewestOldestList = document.getElementById('chronological-newest-oldest-list');
-            chronologicalNewestOldestList.style.display = "";
-        }
-
-        function orderChronologicallyOldestNewest() {
-            const groupedList = document.getElementById('grouped-list');
-            groupedList.style.display = "none";
-
-            const alphabeticalList = document.getElementById('alphabetical-list');
-            alphabeticalList.style.display = "none";
-
-            const chronologicalOldestNewestList = document.getElementById('chronological-oldest-newest-list');
-            chronologicalOldestNewestList.style.display = "";
-
-            const chronologicalNewestOldestList = document.getElementById('chronological-newest-oldest-list');
-            chronologicalNewestOldestList.style.display = "none";
-        }
-
-        function orderAlphabetically() {
-            const groupedList = document.getElementById('grouped-list');
-            groupedList.style.display = "none";
-
-            const alphabeticalList = document.getElementById('alphabetical-list');
-            alphabeticalList.style.display = "";
-
-            const chronologicalOldestNewestList = document.getElementById('chronological-oldest-newest-list');
-            chronologicalOldestNewestList.style.display = "none";
-
-            const chronologicalNewestOldestList = document.getElementById('chronological-newest-oldest-list');
-            chronologicalNewestOldestList.style.display = "none";
-        }
-        
-        function orderGrouped() {
-            const groupedList = document.getElementById('grouped-list');
-            groupedList.style.display = "";
-
-            const alphabeticalList = document.getElementById('alphabetical-list');
-            alphabeticalList.style.display = "none";
-
-            const chronologicalOldestNewestList = document.getElementById('chronological-oldest-newest-list');
-            chronologicalOldestNewestList.style.display = "none";
-
-            const chronologicalNewestOldestList = document.getElementById('chronological-newest-oldest-list');
-            chronologicalNewestOldestList.style.display = "none";
-        }
-        
-        function filter() {
-            const filterValue = document.getElementById('filter').value.toUpperCase();
-            const items = document.getElementsByClassName('item');
-
-            for (i = 0; i < items.length; i++) {
-                const item = items[i].children[0].textContent || items[i].children[0].innerText;
-                if (item.toUpperCase().indexOf(filterValue) > -1) {
-                    items[i].style.display = "";
-                } else {
-                    items[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+    <script src="{{ '/assets/js/list.js' | relative_url }}"></script>
 </body>
 </html>

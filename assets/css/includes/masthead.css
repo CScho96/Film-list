@@ -1,53 +1,48 @@
 .masthead {
-    max-width: 920px;
-    margin: auto;
     text-align: center;
-}
-
-.masthead-top {
-    box-sizing: border-box;
-    padding-top: 16px;
-    height: 60px;
-    max-width: 1280px;
+    padding: 28px 16px 8px;
+    animation: rise 0.5s ease both;
 }
 
 .masthead-title {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: normal;
-    line-height: 24px;
-    margin-top: 6px;
-    vertical-align: top;
+    margin: 0;
+    font-family: 'Bebas Neue', 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: clamp(40px, 7vw, 64px);
+    letter-spacing: 3px;
+    line-height: 1;
+    background: linear-gradient(120deg, #ffffff 30%, var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.masthead ul {
+.masthead-nav ul {
     list-style: none;
+    margin: 18px 0 0;
     padding: 0;
-    margin: 0 24px;
-}
-
-.masthead li {
-    display: inline-block;
-    padding: 0 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .masthead li > a {
     display: block;
+    padding: 8px 18px;
+    border-radius: 999px;
     text-decoration: none;
-    padding: 8px 4px;
-    color: whitesmoke;
-    border-bottom: 3px solid rgba(0, 0, 0, 0);
+    color: var(--muted);
+    font-weight: 500;
+    transition: color 0.2s ease, background 0.2s ease;
 }
 
 .masthead li > a:hover {
-    border-bottom: 3px solid rgb(204, 204, 204);
+    color: var(--text);
+    background: var(--surface);
 }
 
 .masthead li > a.is-selected {
-    border-bottom: 3px solid rgb(100, 100, 100);
-}
-
-.masthead-nav {
-    display: block;
-    border-bottom: rgb(238, 238, 238);
+    color: var(--accent-dark);
+    background: var(--accent);
 }
